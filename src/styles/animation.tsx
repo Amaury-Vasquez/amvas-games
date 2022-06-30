@@ -1,5 +1,26 @@
 import { keyframes, css } from 'styled-components';
 
+const blinkKeyframes = keyframes`
+  0% {
+    /* transform: scale(1); */
+    opacity: 1;
+  }
+
+  50% {
+    /* transform: scale(1.1); */
+    opacity: 0.2;
+  }
+
+  100% {
+    /* transform: scale(1); */
+    opacity: 1;
+  }
+`;
+
+export const blink = ({ time = '1s' } = {}) => css`
+  animation: ${time} ${blinkKeyframes} ease-in-out infinite;
+`;
+
 const fadeInKeyframes = keyframes`
   from {
     filter: blur(5px);
