@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Page = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100vw;
+  background: var(--white-rgba);
+`;
+
+export const focusable = css`
+  &:focus {
+    outline: none;
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    padding: 5px;
+  }
 `;
