@@ -35,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     width: 100%; 
     font-family: Rubik, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--gray-text);
   }
   
 `;
