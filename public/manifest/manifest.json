@@ -1,7 +1,7 @@
 {
-  "short_name": "React boilerplate",
-  "name": "React boilerplate created by Amaury Vasquez",
-  "description": "Boilerplate created to generate React and typescript projects",
+  "short_name": "Amvas games",
+  "name": "Amaury Vasquez games web site",
+  "description": "Project created to recopilate games created in react into a website for people to play them",
   "icons": [
     {
       "src": "template.ico",
@@ -32,6 +32,6 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "theme_color": "#c64756",
-  "background_color": "#c64756"
+  "theme_color": "#3AB0FF",
+  "background_color": "#3AB0FF"
 }
