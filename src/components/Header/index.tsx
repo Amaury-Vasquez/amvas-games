@@ -2,10 +2,10 @@ import { MdVideogameAsset } from 'react-icons/md';
 import { HiOutlineBackspace } from 'react-icons/hi';
 
 import { Head, LeftLink, NavBar, RightLink } from './styles';
-import { useLinkClick } from '../../hooks/useLinkClick';
+import { useItemClick } from '../../hooks/useItemClick';
 
 export const Header = () => {
-  const handleClick = useLinkClick();
+  const handleClick = useItemClick();
 
   return (
     <Head>
