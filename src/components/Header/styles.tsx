@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link as Anchor } from 'react-router-dom';
 
 import { DeviceSize } from '../../DeviceSize';
+import { selectable } from '../../styles/animation';
 
 export const Head = styled.header`
   position: relative;
@@ -40,7 +41,7 @@ export const NavBar = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease;
+
     color: var(--gray-text);
     font-weight: 300;
 
@@ -48,12 +49,7 @@ export const NavBar = styled.nav`
       font-size: 1.5rem;
     }
 
-    &:hover,
-    :focus {
-      outline: none;
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
+    ${selectable};
   }
 
   @media (min-width: ${DeviceSize.laptop}) {
