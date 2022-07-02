@@ -8,7 +8,7 @@ export const useImageLoad = (url: string) => {
     const fetchImage = async () => {
       try {
         const res = await fetch(url, {
-          cache: 'no-cache',
+          cache: 'default',
           credentials: 'omit',
           referrerPolicy: 'strict-origin-when-cross-origin',
         });
