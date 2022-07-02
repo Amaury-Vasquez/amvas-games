@@ -54,3 +54,13 @@ export const fadeOut = ({ time = '1s', type = 'ease' } = {}) =>
   css`
     animation: ${time} ${fadeOutKeyframes} ${type};
   `;
+
+export const selectable = css`
+  &:hover,
+  :focus {
+    transition: transform 0.2s ease;
+    outline: none;
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+`;
