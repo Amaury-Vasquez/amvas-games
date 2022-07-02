@@ -39,11 +39,18 @@ export const GameCard = styled(Link)`
     ${fadeIn()}
   }
 
-  &:hover,
-  :focus {
+  &:focus {
     outline: none;
     & > div {
       display: flex;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      & > div {
+        display: flex;
+      }
     }
   }
 

@@ -25,7 +25,7 @@ export const Card = styled.button`
     opacity: 0.5;
   }
 
-  @media (min-width: ${DeviceSize.laptop}) {
+  @media (hover: hover) {
     &:hover {
       opacity: 0.5;
     }
@@ -79,6 +79,12 @@ export const PokemonDiv = styled.div<{ willFlip: number }>`
     & > img {
       height: 100%;
       width: 100%;
+    }
+  }
+
+  @media (max-width: ${DeviceSize.smallTablet}) {
+    & > div {
+      padding: 5px;
     }
   }
 `;

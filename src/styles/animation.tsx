@@ -56,11 +56,19 @@ export const fadeOut = ({ time = '1s', type = 'ease' } = {}) =>
   `;
 
 export const selectable = css`
-  &:hover,
-  :focus {
-    transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+
+  &:focus {
     outline: none;
     transform: scale(1.1);
     opacity: 0.8;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      outline: none;
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
   }
 `;
