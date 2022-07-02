@@ -21,9 +21,14 @@ export const Card = styled.button`
     width: inherit;
   }
 
-  &:hover,
-  :focus {
+  &:focus {
     opacity: 0.5;
+  }
+
+  @media (min-width: ${DeviceSize.laptop}) {
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `;
 
