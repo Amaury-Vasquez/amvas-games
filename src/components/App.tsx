@@ -8,6 +8,8 @@ import { GlobalStyles } from '../styles/GlobalStyles';
 
 //lazy imports
 const Home = lazy(() => import('../pages/Home'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+const Pokemory = lazy(() => import('../pages/Pokemory'));
 
 const App = () => {
   return (
@@ -18,7 +20,8 @@ const App = () => {
           <Suspense fallback={<FallbackScreen />}>
             <Routes>
               <Route element={<Home />} path="/" />
-              <Route element={<FallbackScreen />} path="*" />
+              <Route element={<NotFound />} path="*" />
+              <Route element={<Pokemory />} path="/pokemory" />
             </Routes>
           </Suspense>
         </Layout>
