@@ -111,15 +111,17 @@ export const MemoryGame = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (min-width: ${DeviceSize.laptop}) {
-    padding: 30px 10px 0;
+    padding: 30px 10px;
     margin: 0 auto;
     width: 1024px;
   }
 
   @media (max-width: ${DeviceSize.tablet}) {
     width: 100vw;
+    padding-bottom: 30px;
   }
 `;
 

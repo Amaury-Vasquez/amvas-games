@@ -1,5 +1,6 @@
 import { MdOutlineRestartAlt } from 'react-icons/md';
 
+import { GameEnd } from '../GameEnd';
 import { PokeCard } from '../PokeCard';
 import { ProgressBar } from '../ProgressBar';
 import { useItemClick } from '../../hooks/useItemClick';
@@ -7,19 +8,30 @@ import { useMemoryGame } from '../../hooks/useMemoryGame';
 import { Board, GameInfo, Loading, MemoryGame, ResetButton } from './styles';
 
 export const PokeGame = () => {
-  const { loadCount, cover, images, limit, loaded, reset, score } =
-    useMemoryGame();
+  const {
+    callback,
+    cover,
+    cards,
+    gameEnded,
+    getTime,
+    limit,
+    loadCount,
+    loaded,
+    reset,
+    score,
+    turns,
+  } = useMemoryGame();
   const handleClick = useItemClick();
 
   const mapCards = () => {
-    return images.map((item, i) => {
-      // const id = item.replace(raw, '');
+    return cards.map((data, i) => {
       return (
         <PokeCard
-          alt={`pokesprite${item}`}
+          alt={`pokesprite+${i}`}
+          callback={callback}
           cover={cover}
-          key={`pokemon:${item}+${i}`}
-          img={item}
+          data={data}
+          key={`pokemon:${i}`}
         />
       );
     });
@@ -27,6 +39,13 @@ export const PokeGame = () => {
 
   return (
     <MemoryGame>
+      {gameEnded && (
+        <GameEnd
+          data={`Time: ${getTime()}, turns: ${turns}`}
+          message="Congratulations, you have won!"
+          reset={reset}
+        />
+      )}
       {loaded ? (
         <>
           <GameInfo>
