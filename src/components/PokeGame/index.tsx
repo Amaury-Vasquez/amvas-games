@@ -41,7 +41,7 @@ export const PokeGame = () => {
     <MemoryGame>
       {gameEnded && (
         <GameEnd
-          data={`Time: ${getTime()}, turns: ${turns}`}
+          data={`Time: ${getTime()}s, turns: ${turns}`}
           message="Congratulations, you have won!"
           reset={reset}
         />
