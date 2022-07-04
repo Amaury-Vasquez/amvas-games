@@ -21,11 +21,12 @@ export const Card = styled.button`
     width: inherit;
   }
 
+  &:focus {
+    opacity: 0.5;
+  }
+
   @media (hover: hover) {
     &:hover {
-      opacity: 0.5;
-    }
-    &:focus {
       opacity: 0.5;
     }
   }
