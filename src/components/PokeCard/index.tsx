@@ -1,29 +1,35 @@
-import { Card, CoverDiv, PokemonDiv } from './styles';
-import { useActive } from '../../hooks/useActive';
-import { useItemClick } from '../../hooks/useItemClick';
 import { useState } from 'react';
+
+import { Card, CoverDiv, PokemonDiv } from './styles';
+import { useItemClick } from '../../hooks/useItemClick';
+import { CardState, PokeCardData } from '../../hooks/useMemoryGame';
 
 export const PokeCard = (props: {
   alt: string;
+  callback: Function;
   cover: string;
-  img: string;
+  data: CardState;
 }) => {
+  // Component data / props / state
   const onClick = useItemClick();
-  const { alt, cover, img } = props;
-  const { active, setActive } = useActive();
   const [flip, setFlip] = useState(0);
+  const { alt, callback, cover, data } = props;
+  const { active, img, index, mutable } = data;
 
   return (
     <Card
       onClick={(e) => {
         onClick(e);
-        setFlip(1);
-        setTimeout(() => {
-          setFlip(0);
-          setActive(!active);
-        }, 400);
+        const flipCard = () => {
+          setFlip(1);
+          setTimeout(() => {
+            setFlip(0);
+          }, 400);
+        };
+        const data: PokeCardData = { alt, flipCard, img, index };
+        callback(data);
       }}
-      disabled={flip === 1}
+      disabled={flip === 1 || !mutable}
     >
       {active ? (
         <PokemonDiv willFlip={flip}>
