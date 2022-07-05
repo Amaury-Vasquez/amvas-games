@@ -18,6 +18,7 @@ export const PokeCard = (props: {
 
   return (
     <Card
+      hoverable={'ontouchstart' in window || navigator.maxTouchPoints ? 1 : 0}
       onClick={(e) => {
         onClick(e);
         const flipCard = () => {

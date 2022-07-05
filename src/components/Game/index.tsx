@@ -9,7 +9,10 @@ export const Game = (props: { gameData: GameData }) => {
   const { img, loaded } = useImageLoad(gameData.imageUrl);
 
   return (
-    <GameCard to={gameData.link}>
+    <GameCard
+      hoverable={'ontouchstart' in window || navigator.maxTouchPoints ? 1 : 0}
+      to={gameData.link}
+    >
       {loaded ? (
         <>
           <img alt={gameData.name} src={img} />

@@ -55,6 +55,16 @@ export const fadeOut = ({ time = '1s', type = 'ease' } = {}) =>
     animation: ${time} ${fadeOutKeyframes} ${type};
   `;
 
+export const selectableHover = css`
+  @media (hover: hover) {
+    &:hover {
+      outline: none;
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+`;
+
 export const selectable = css`
   transition: transform 0.2s ease;
 
@@ -64,11 +74,5 @@ export const selectable = css`
     opacity: 0.8;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      outline: none;
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-  }
+  ${!('ontouchstart' in window || navigator.maxTouchPoints) && selectableHover}
 `;

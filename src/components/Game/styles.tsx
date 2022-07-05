@@ -20,7 +20,23 @@ const appear = css`
   animation-iteration-count: 1;
 `;
 
-export const GameCard = styled(Link)`
+const gameHover = css`
+  @media (hover: hover) {
+    &:hover {
+      & > div {
+        display: flex;
+      }
+    }
+  }
+`;
+
+const onTouchDevice = css`
+  & > div {
+    display: flex;
+  }
+`;
+
+export const GameCard = styled(Link)<{ hoverable: number }>`
   border-radius: 5px;
   position: relative;
   display: flex;
@@ -46,13 +62,7 @@ export const GameCard = styled(Link)`
     }
   }
 
-  @media (hover: hover) {
-    &:hover {
-      & > div {
-        display: flex;
-      }
-    }
-  }
+  ${(props) => (props.hoverable === 1 ? onTouchDevice : gameHover)};
 
   @media (min-width: ${DeviceSize.laptop}) {
     height: 220px;
@@ -62,18 +72,9 @@ export const GameCard = styled(Link)`
     }
   }
 
-  @media (max-width: ${DeviceSize.tablet}) {
-    & > div {
-      display: flex;
-    }
-  }
-
   @media (max-width: ${DeviceSize.tablet}) and (min-width: ${DeviceSize.smallTablet}) {
     height: 220px;
     width: 220px;
-  }
-
-  @media (max-width: ${DeviceSize.smallTablet}) {
   }
 
   @media (max-width: ${DeviceSize.smallTablet}) and (min-width: ${DeviceSize.mobile}) {

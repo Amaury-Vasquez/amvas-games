@@ -8,7 +8,15 @@ const flip = ({ direction = '180deg' } = {}) => css`
   transform: rotateY(${direction});
 `;
 
-export const Card = styled.button`
+const cardHover = css`
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+`;
+
+export const Card = styled.button<{ hoverable: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +33,7 @@ export const Card = styled.button`
     opacity: 0.5;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+  ${(props) => props.hoverable === 0 && cardHover};
 `;
 
 export const CoverDiv = styled.div<{ willFlip: number }>`
