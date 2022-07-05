@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Card, CoverDiv, PokemonDiv } from './styles';
+import { hoverableProp } from '../../styles/templates';
 import { useItemClick } from '../../hooks/useItemClick';
 import { CardState, PokeCardData } from '../../hooks/useMemoryGame';
 
@@ -18,7 +19,7 @@ export const PokeCard = (props: {
 
   return (
     <Card
-      hoverable={'ontouchstart' in window || navigator.maxTouchPoints ? 1 : 0}
+      hoverable={hoverableProp}
       onClick={(e) => {
         onClick(e);
         const flipCard = () => {
