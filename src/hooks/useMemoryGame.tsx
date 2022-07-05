@@ -183,7 +183,7 @@ export const useMemoryGame = () => {
             setCards(arr);
             setActive(null);
             setPrev(null);
-          }, 1000);
+          }, time * 2);
         } else {
           setActive(null);
           setScore((score) => score + 1);
