@@ -15,3 +15,6 @@ export const focusable = css`
     padding: 5px;
   }
 `;
+
+export const hoverableProp =
+  'ontouchstart' in window || navigator.maxTouchPoints ? 1 : 0;
