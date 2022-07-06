@@ -21,6 +21,10 @@ const appear = css`
 `;
 
 const gameHover = css`
+  & > div {
+    display: none;
+  }
+
   @media (hover: hover) {
     &:hover {
       & > div {
@@ -67,9 +71,6 @@ export const GameCard = styled(Link)<{ hoverable: number }>`
   @media (min-width: ${DeviceSize.laptop}) {
     height: 220px;
     width: 220px;
-    & > div {
-      display: none;
-    }
   }
 
   @media (max-width: ${DeviceSize.tablet}) and (min-width: ${DeviceSize.smallTablet}) {
