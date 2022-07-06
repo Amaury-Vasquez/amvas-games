@@ -10,6 +10,7 @@ import { GlobalStyles } from '../styles/GlobalStyles';
 const Home = lazy(() => import('../pages/Home'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const Pokemory = lazy(() => import('../pages/Pokemory'));
+const TicTacToe = lazy(() => import('../pages/TicTacToe'));
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
               <Route element={<Home />} path="/" />
               <Route element={<NotFound />} path="*" />
               <Route element={<Pokemory />} path="/pokemory" />
+              <Route element={<TicTacToe />} path="/tic-tac-toe" />
             </Routes>
           </Suspense>
         </Layout>
