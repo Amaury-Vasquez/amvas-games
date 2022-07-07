@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { fadeIn } from '../../styles/animation';
 import { DeviceSize } from '../../DeviceSize';
 
 export const Credits = styled.p`
@@ -8,6 +9,7 @@ export const Credits = styled.p`
 `;
 
 export const Image = styled.img`
+  ${fadeIn()};
   width: auto;
 
   @media (min-width: ${DeviceSize.laptop}) {
