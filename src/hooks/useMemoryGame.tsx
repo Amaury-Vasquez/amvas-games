@@ -76,6 +76,15 @@ export const useMemoryGame = () => {
           const url =
             'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
 
+          // Function to generate random pokemon ids
+          const generateRandomArr = () => {
+            const set = new Set<number>();
+            while (set.size < limit)
+              set.add(Math.floor(Math.random() * 493) + 1);
+            return Array.from(set);
+          };
+
+          // Function to shuffle final array of pokemon images
           const shuffleArray = (arr: any[]) => {
             for (let i = arr.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
@@ -85,12 +94,9 @@ export const useMemoryGame = () => {
             }
             return arr;
           };
-          // Random array for pokemon ids
-          const randomArr = Array.from(
-            { length: limit },
-            () => Math.floor(Math.random() * 493) + 1
-          );
+
           // Creation of promises array
+          const randomArr = generateRandomArr();
           const promiseArr = randomArr.map(async (id) => {
             try {
               const res = await fetch(url + id + '.png', {
