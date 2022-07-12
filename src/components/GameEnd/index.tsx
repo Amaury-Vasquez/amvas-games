@@ -1,3 +1,5 @@
+import { FC } from 'react';
+import { ImCross } from 'react-icons/im';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { IoGameController } from 'react-icons/io5';
 import { MdOutlineRestartAlt } from 'react-icons/md';
@@ -7,18 +9,19 @@ import { End, EndMessage, Link, ResetButton } from './styles';
 
 export const GameEnd = (props: {
   data: string;
+  lost?: boolean;
   message: string;
   reset: Function;
 }) => {
-  const { data, message, reset } = props;
+  const { data, lost, message, reset } = props;
   const handleClick = useItemClick();
 
   return (
     <End>
-      <EndMessage>
+      <EndMessage lost={lost ? 1 : 0}>
         <h3> {message} </h3>
         <span>
-          {data} <AiFillCheckCircle />
+          {data} {lost ? <ImCross /> : <AiFillCheckCircle />}
         </span>
         <ResetButton
           onClick={(e) => {

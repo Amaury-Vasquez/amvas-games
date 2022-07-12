@@ -33,7 +33,7 @@ export const End = styled.div`
   }
 `;
 
-export const EndMessage = styled.div`
+export const EndMessage = styled.div<{ lost?: number }>`
   background: white;
   line-height: 2rem;
   display: grid;
@@ -60,7 +60,8 @@ export const EndMessage = styled.div`
 
     & > svg {
       margin-left: 10px;
-      color: #5bd666;
+      color: ${(props) =>
+        props.lost && props.lost === 1 ? 'var(--red)' : '#5bd666'};
       font-size: 1.2rem;
     }
   }
