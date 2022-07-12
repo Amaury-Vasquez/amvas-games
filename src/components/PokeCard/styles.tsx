@@ -1,12 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { DeviceSize } from '../../DeviceSize';
-import { fadeIn } from '../../styles/animation';
-
-const flip = ({ direction = '180deg' } = {}) => css`
-  transition: transform 0.4s;
-  transform: rotateY(${direction});
-`;
+import { fadeIn, flip } from '../../styles/animation';
 
 const cardHover = css`
   @media (hover: hover) {
