@@ -76,3 +76,8 @@ export const selectable = css`
 
   ${!('ontouchstart' in window || navigator.maxTouchPoints) && selectableHover}
 `;
+
+export const flip = ({ direction = '180deg' } = {}) => css`
+  transition: transform 0.4s;
+  transform: rotateY(${direction});
+`;
