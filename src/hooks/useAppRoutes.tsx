@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 //lazy imports
 const Home = lazy(() => import('../pages/Home'));
+const Checkers = lazy(() => import('../pages/Checkers'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const Pokemory = lazy(() => import('../pages/Pokemory'));
 const TicTacToe = lazy(() => import('../pages/TicTacToe'));
@@ -13,6 +14,10 @@ export const useAppRoutes = () => {
     {
       element: <Home />,
       path: '/',
+    },
+    {
+      element: <Checkers />,
+      path: '/checkers',
     },
     {
       element: <NotFound />,
