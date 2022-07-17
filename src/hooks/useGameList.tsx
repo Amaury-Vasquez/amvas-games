@@ -20,6 +20,13 @@ export const useGameList = () => {
       name: 'pokemory',
     },
     {
+      imageUrl: 'https://i.imgur.com/t1gaKJa.png?1',
+      Icon: GiToken,
+      info: 'two players offline game',
+      link: '/checkers',
+      name: 'Checkers',
+    },
+    {
       imageUrl: 'https://i.imgur.com/KpUpxXb.jpg?1',
       Icon: GiTicTacToe,
       info: 'two players offline game',
@@ -32,13 +39,6 @@ export const useGameList = () => {
       info: 'offline vs computer game',
       link: '/rock-paper-scissors',
       name: 'rock paper scissors',
-    },
-    {
-      imageUrl: 'https://i.imgur.com/kq9UlDU.jpg?1',
-      Icon: GiToken,
-      info: 'two players offline game',
-      link: '/checkers',
-      name: 'Checkers',
     },
   ];
 
