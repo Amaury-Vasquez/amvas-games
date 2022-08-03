@@ -16,5 +16,5 @@ Game page
 
 ### Collaboration
 
-If you want to colaborate by adding games to the page, you can do a push request to the repositorie,
+If you want to colaborate by adding games to the page, you can do a pull request to the repositorie,
 only requisite is it has to be built in react.
