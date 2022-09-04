@@ -3,10 +3,15 @@
 Page created to recolect some basic games created and react for people who whants
 to play them. Completely free.
 
-<a href="https://games.amauryvasquez.com/" target="_blank" referrer="noopener noreferrer">
-Game page
-</a>
+<p align="center"> 
+  <a  href="https://games.amauryvasquez.com/" target="_blank" referrer="noopener noreferrer">
+    Game page
+  </a>
+</p>
 
+<p align="center">
+  <img src="https://i.imgur.com/86I46Q8.png" alt="Image of landing page"/>
+</p>
 ## Game list
 
 - Pokemon memory game
