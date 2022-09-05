@@ -1,23 +1,18 @@
 import { useCheckers } from '../../hooks/useCheckers';
-import { CheckersSquare } from '../../components/CheckersSquare';
-import { CheckersContent, GameBoard, Rules, Square } from './styles';
+import { CheckersContent, Rules } from './styles';
+import { CheckersBoard } from '../../components/CheckersBoard';
 
 const Checkers = () => {
   // const board = Array.from({ length: 64 });
-  const { flatBoard, squareClicked } = useCheckers();
+  // const { flatBoard, squareClicked } = useCheckers();
+  const { boardDimension, callback, gameBoard } = useCheckers();
   return (
     <CheckersContent>
-      <GameBoard>
-        {flatBoard().map((item, i) => (
-          <CheckersSquare
-            callback={squareClicked}
-            chip={item.chip}
-            dark={item.dark}
-            optional={item.optional}
-            key={`${item}+${item.dark}+${i}`}
-          />
-        ))}
-      </GameBoard>
+      <CheckersBoard
+        boardDimension={boardDimension}
+        callback={callback}
+        gameBoard={gameBoard}
+      />
       <Rules>
         <h3> How to play </h3>
         <p>

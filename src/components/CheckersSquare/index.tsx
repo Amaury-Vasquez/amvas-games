@@ -1,27 +1,21 @@
-import { Square } from './styles';
-import { ChipData } from '../../hooks/useCheckers';
-import { useItemClick } from '../../hooks/useItemClick';
+import { SquareValues } from '../../hooks/useCheckers';
+import { Chip, SquareContainer, Optional } from './styles';
 
-export const CheckersSquare = (props: {
-  callback: Function;
-  chip: ChipData | null;
-  dark: boolean;
-  optional: boolean;
-}) => {
-  const { callback, chip, dark, optional } = props;
-  const handleClick = useItemClick();
+export const Square = (props: SquareValues) => {
+  const { piece, active, whiteSquare, optional, selected, callback } = props;
+
   return (
-    <Square
-      chip={chip}
-      dark={dark ? 1 : 0}
-      onClick={(e) => {
-        handleClick(e);
-        callback(chip);
+    <SquareContainer
+      optional={optional}
+      whitePiece={piece.whitePiece}
+      selected={selected}
+      whiteSquare={whiteSquare}
+      onClick={() => {
+        if (callback) callback(props);
       }}
-      optional={optional ? 1 : 0}
-      disabled={!dark}
     >
-      {(chip || optional) && <div />}
-    </Square>
+      {!active && optional && <Optional />}
+      {active && <Chip white={piece.whitePiece ? 1 : 0} />}
+    </SquareContainer>
   );
 };
