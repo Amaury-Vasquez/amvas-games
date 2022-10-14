@@ -12,6 +12,7 @@ to play them. Completely free.
 <p align="center">
   <img src="https://i.imgur.com/86I46Q8.png" alt="Image of landing page"/>
 </p>
+
 ## Game list
 
 - Pokemon memory game
